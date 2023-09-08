@@ -23,7 +23,7 @@ namespace AdressBook.Controllers
             try
             {
                 Data.List.Add(adressBook);
-                var message = $"Add {adressBook.Name}, {adressBook.UserName}, {adressBook.City}";
+                var message = $"Add {adressBook.Name},{adressBook.City}";
                 _logger.LogInformation(message);
                 return Ok();
             }
