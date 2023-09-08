@@ -1,8 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 namespace AdressBook.Models
 {
@@ -22,6 +18,17 @@ namespace AdressBook.Models
 
         }
 
+        public Adress(string name, string street, int buldingNumber, string postCode, string city, string country)
+        {
+            Guid id = Guid.NewGuid();
+            SetName(name);
+            SetStreet(street);
+            BuldingNumber = buldingNumber;
+            SetPostCode(postCode);
+            SetCity(city);
+            SetCountry(country);
+        }
+
         public Adress(string name, string street, int buldingNumber, int premisesNumber, string postCode, string city, string country)
         {
             Guid id = Guid.NewGuid();
@@ -32,17 +39,6 @@ namespace AdressBook.Models
             SetPostCode(postCode);
             SetCity(city);
             SetCountry(country);
-        }
-        public Adress(string name, string street, int buldingNumber, string postCode, string city, string country)
-        {
-            Guid id = Guid.NewGuid();
-            SetName(name);
-            SetStreet(street);
-            BuldingNumber = buldingNumber;
-            SetPostCode(postCode);
-            SetCity(city);
-            SetCountry(country);
-
         }
 
         public void SetName(string name)
@@ -55,6 +51,7 @@ namespace AdressBook.Models
             Name = name;
 
         }
+
         public void SetStreet(string street)
         {
             if (string.IsNullOrWhiteSpace(street))
@@ -74,6 +71,7 @@ namespace AdressBook.Models
             postCode = postCode.ToLower();
             Street = postCode;
         }
+
         public void SetCity(string city)
         {
             if (string.IsNullOrWhiteSpace(city))
@@ -83,6 +81,7 @@ namespace AdressBook.Models
             city = city.ToLower();
             Street = city;
         }
+
         public void SetCountry(string country)
         {
             if (string.IsNullOrWhiteSpace(country))
@@ -92,7 +91,5 @@ namespace AdressBook.Models
             country = country.ToLower();
             Street = country;
         }
-
-
     }
 }
