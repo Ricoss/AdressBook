@@ -11,6 +11,7 @@ namespace AdressBook.Services
         {
             _adressRepozytories = adressRepozytories;
         }
+
         public async Task AddAdresAsync(string name, string street, int buldingNumber, string postCode, string city, string country)
         {
             var adres = new Adress(name, street, buldingNumber, postCode, city, country);
@@ -25,8 +26,6 @@ namespace AdressBook.Services
 
         public async Task<Adress> GetCityAsync(string city)
             =>await _adressRepozytories.GetCityAssync(city);
-
-
 
         public async Task GetLastAddedAdresAsync()
         {
