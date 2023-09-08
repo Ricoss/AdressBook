@@ -69,7 +69,7 @@ namespace AdressBook.Models
                 throw new Exception("Post Code can not by empty.");
             }
             postCode = postCode.ToLower();
-            Street = postCode;
+            PostCode = postCode;
         }
 
         public void SetCity(string city)
@@ -79,7 +79,7 @@ namespace AdressBook.Models
                 throw new Exception("City can not by empty.");
             }
             city = city.ToLower();
-            Street = city;
+            City = city;
         }
 
         public void SetCountry(string country)
@@ -89,7 +89,7 @@ namespace AdressBook.Models
                 throw new Exception("Country can not by empty.");
             }
             country = country.ToLower();
-            Street = country;
+            Country = country;
         }
     }
 }

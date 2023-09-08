@@ -23,15 +23,16 @@ namespace AdressBook.Services
             await _adressRepozytories.AddAssync(adres);
         }
 
-        public async Task GetCityAsync(string city)
-           => await _adressRepozytories.GetCityAssync(city);
-        
+        public async Task<Adress> GetCityAsync(string city)
+            =>await _adressRepozytories.GetCityAssync(city);
+
+
 
         public async Task GetLastAddedAdresAsync()
         {
             var adres = _adressRepozytories.GetAllAssync();
             //TODO 
-                
+
         }
     }
 }

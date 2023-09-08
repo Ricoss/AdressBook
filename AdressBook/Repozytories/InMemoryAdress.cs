@@ -10,11 +10,11 @@ namespace AdressBook.Repozytories
     {
         private static ISet<Adress> _addres = new HashSet<Adress>
         {
-            new Adress ("Nazwa1", "ulica1",1,"00-000","Miasto1","Kraj1"),
-            new Adress ("Nazwa2", "ulica2",2,"00-000","Miasto1","Kraj1"),
-            new Adress ("Nazwa3", "ulica3",1,"00-000","Miasto2","Kraj1"),
-            new Adress ("Nazwa4", "ulica1",2,"00-000","Miasto3","Kraj2"),
-            new Adress ("Nazwa4", "ulica1",2,0,"00-000","Miasto3","Kraj2"),
+            new Adress ("nazwa1", "ulica1",1,"00-000","miasto1","kraj1"),
+            new Adress ("nazwa2", "ulica2",2,"00-000","miasto1","kraj1"),
+            new Adress ("nazwa3", "ulica3",1,"00-000","miasto2","kraj1"),
+            new Adress ("nazwa4", "ulica1",2,"00-000","miasto3","kraj2"),
+            new Adress ("nazwa4", "ulica1",2,0,"00-000","miasto3","kraj2"),
         };
         public async Task AddAssync(Adress adress)
         {

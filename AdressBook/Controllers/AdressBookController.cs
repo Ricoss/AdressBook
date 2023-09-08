@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AdressBook.Models;
+using AdressBook.Services;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace AdressBook.Controllers
 {
-    public class AdressBookController : Controller
+    [Route("[controller]")]
+    [ApiController]
+    public class AdressBookController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly IAdressService _adressService;
+        public AdressBookController(IAdressService adressService)
         {
-            return View();
+            _adressService = adressService;
         }
+        [HttpGet("{city}")]
+        public async Task<Adress> Get(string city)
+        =>  await _adressService.GetCityAsync(city);   
     }
 }

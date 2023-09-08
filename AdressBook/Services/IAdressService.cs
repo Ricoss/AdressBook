@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using AdressBook.Models;
+using System.Threading.Tasks;
 
 namespace AdressBook.Services
 {
@@ -7,6 +8,6 @@ namespace AdressBook.Services
         public Task AddAdresAsync(string name, string street, int buldingNumber, string postCode, string city, string country);
         public Task AddAdresAsync(string name, string street, int buldingNumber, int premisesNumber, string postCode, string city, string country);
         public Task GetLastAddedAdresAsync();
-        public Task GetCityAsync(string city);
+        public Task<Adress> GetCityAsync(string city);
     }
 }
