@@ -1,3 +1,5 @@
+using AdressBook.Repozytories;
+using AdressBook.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +34,8 @@ namespace AdressBook
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdressBook", Version = "v1" });
             });
+            services.AddScoped<IAdressRepozytories, InMemoryAdress>();
+            services.AddScoped<IAdressService, AdressServicen>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

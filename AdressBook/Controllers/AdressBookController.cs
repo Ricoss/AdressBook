@@ -1,56 +1,12 @@
-﻿using AdressBook.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace AdressBook.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AdressBookController : ControllerBase
+    public class AdressBookController : Controller
     {
-        private readonly ILogger<AdressBookController> _logger;
-
-        public AdressBookController(ILogger<AdressBookController> logger)
+        public IActionResult Index()
         {
-            _logger = logger;
-        }
-        // POST api/<AdressBook>
-        [HttpPost]
-        public ActionResult Post([FromBody] Adress adressBook)
-        {
-            try
-            {
-                Data.List.Add(adressBook);
-                var message = $"Add {adressBook.Name},{adressBook.City}";
-                _logger.LogInformation(message);
-                return Ok();
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-
-            }
-        }
-
-        // GET: api/<AdressBook>
-        [HttpGet]
-        public ActionResult Get()
-        {  
-            var result = Data.List.LastOrDefault();
-            var message = "The last city added was read";
-            _logger.LogInformation(message);
-            return result is not null ? Ok(result) : NotFound("Lack");
-        }
-
-        [HttpGet("{miasto}")]
-        public ActionResult Get(string miasto)
-        {
-            var query = Data.List.Where(x => miasto == x.City).ToList();
-            var message = $"Select {miasto}";
-            _logger.LogInformation(message);
-            return query.Count() != 0 ? Ok(query) : NotFound("Lack");
+            return View();
         }
     }
 }
