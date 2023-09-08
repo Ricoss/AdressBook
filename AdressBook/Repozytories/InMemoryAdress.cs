@@ -27,7 +27,7 @@ namespace AdressBook.Repozytories
            => await Task.FromResult(_addres.FirstOrDefault(x => x.City == city.ToLower()));
 
         public async Task<IEnumerable<Adress>> GetAllAssync()
-           => await Task.FromResult(_addres);
+           => await Task.FromResult(_addres.ToList());
 
         public async Task UpdataAssync(Adress adress)
         {
