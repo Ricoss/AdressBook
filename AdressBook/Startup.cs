@@ -34,8 +34,8 @@ namespace AdressBook
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdressBook", Version = "v1" });
             });
-            services.AddScoped<IAdressRepozytories, InMemoryAdress>();
-            services.AddScoped<IAdressService, AdressServicen>();
+            services.AddScoped<IAddressRepozytories, InMemoryAddress>();
+            services.AddScoped<IAddressService, AddressServicen>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

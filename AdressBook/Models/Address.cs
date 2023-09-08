@@ -2,7 +2,7 @@
 
 namespace AdressBook.Models
 {
-    public class Adress
+    public class Address
     {
         public Guid Id { get; }
         public string Name { get; private set; }
@@ -13,14 +13,14 @@ namespace AdressBook.Models
         public string City { get; private set; }
         public string Country { get; private set; }
 
-        protected Adress()
+        protected Address()
         {
 
         }
 
-        public Adress(string name, string street, int buldingNumber, string postCode, string city, string country)
+        public Address(string name, string street, int buldingNumber, string postCode, string city, string country)
         {
-            Guid id = Guid.NewGuid();
+            Id = Guid.NewGuid(); ;
             SetName(name);
             SetStreet(street);
             BuldingNumber = buldingNumber;
@@ -29,7 +29,7 @@ namespace AdressBook.Models
             SetCountry(country);
         }
 
-        public Adress(string name, string street, int buldingNumber, int premisesNumber, string postCode, string city, string country)
+        public Address(string name, string street, int buldingNumber, int premisesNumber, string postCode, string city, string country)
         {
             Guid id = Guid.NewGuid();
             SetName(name);
