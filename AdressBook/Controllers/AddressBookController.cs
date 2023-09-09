@@ -2,6 +2,7 @@
 using AdressBook.Models;
 using AdressBook.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace AdressBook.Controllers
@@ -35,6 +36,10 @@ namespace AdressBook.Controllers
         {
 
         }
+        [Route("GetAllAddress")]
+        [HttpGet]
+        public async Task<IEnumerable<Address>> GetAll()
+        => await _adressService.GetAllAssync();
 
     }
 }
