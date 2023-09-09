@@ -1,13 +1,14 @@
 ﻿using AdressBook.Models;
 using AdressBook.Repozytories;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace AdressBook.Services
 {
-    public class AddressServicen : IAddressService
+    public class AddressService : IAddressService
     {
         private readonly IAddressRepozytories _addressRepozytories;
-        public AddressServicen(IAddressRepozytories addressRepozytories)
+        public AddressService(IAddressRepozytories addressRepozytories)
         {
             _addressRepozytories = addressRepozytories;
         }
@@ -33,5 +34,9 @@ namespace AdressBook.Services
             //TODO 
 
         }
+
+        public async Task<IEnumerable<Address>> GetAllAssync()
+            => await _addressRepozytories.GetAllAssync();
+
     }
 }

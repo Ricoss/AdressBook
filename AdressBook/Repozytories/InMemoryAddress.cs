@@ -8,14 +8,7 @@ namespace AdressBook.Repozytories
 {
     public class InMemoryAddress : IAddressRepozytories
     {
-        private static ISet<Address> _addres = new HashSet<Address>
-        {
-            new Address ("nazwa1", "ulica1",1,"00-000","miasto1","kraj1"),
-            new Address ("nazwa2", "ulica2",2,"00-000","miasto1","kraj1"),
-            new Address ("nazwa3", "ulica3",1,"00-000","miasto2","kraj1"),
-            new Address ("nazwa4", "ulica1",2,"00-000","miasto3","kraj2"),
-            new Address ("nazwa4", "ulica1",2,0,"00-000","miasto3","kraj2"),
-        };
+        private static ISet<Address> _addres = new HashSet<Address>();
         public async Task AddAssync(Address address)
         {
             _addres.Add(address);
