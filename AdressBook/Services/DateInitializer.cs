@@ -19,10 +19,10 @@ namespace AdressBook.Services
             var tasks = new List<Task>();
             for (var i = 1; i <= 2; i++)
             {
-            tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret{i}", i, "19-200", "Bełda", "Polend"));
-            tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret{i}", i, "76-211", "Bałamątek", "Polend"));
-            tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret{i}", i,i+1, "62-641", "Adamin", "Polend"));
-            tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret{i}", i,i+1, "62-652", "Niwki", "Polend"));
+            tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret1", i, "19-200", "Bełda", "Polend"));
+            tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret2", i, "76-211", "Bałamątek", "Polend"));
+            tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret3", i,i+1, "62-641", "Adamin", "Polend"));
+            tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret4", i,i+1, "62-652", "Niwki", "Polend"));
             }
             await Task.WhenAll(tasks);
         }

@@ -7,7 +7,7 @@ namespace AdressBook.Models
         public Guid Id { get; }
         public string Name { get; private set; }
         public string Street { get; private set; }
-        public int BuldingNumber { get; private set; }
+        public int BuldingNumber { get; private set; } 
         public int PremisesNumber { get; private set; }
         public string PostCode { get; private set; }
         public string City { get; private set; }
