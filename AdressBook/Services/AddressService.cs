@@ -25,7 +25,7 @@ namespace AdressBook.Services
             await _addressRepozytories.AddAssync(address);
         }
 
-        public async Task<Address> GetCityAsync(string city)
+        public async Task<IEnumerable<Address>> GetCityAsync(string city)
             =>await _addressRepozytories.GetCityAssync(city);
 
         public async Task GetLastAddedAdresAsync()

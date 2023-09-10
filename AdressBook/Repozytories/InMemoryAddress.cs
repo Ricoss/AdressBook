@@ -16,8 +16,8 @@ namespace AdressBook.Repozytories
         }
         public async Task<Address> GetAssync(Guid id)
            => await Task.FromResult(_addres.FirstOrDefault(x => x.Id == id));
-        public async Task<Address> GetCityAssync(string city)
-           => await Task.FromResult(_addres.FirstOrDefault(x => x.City == city.ToLower()));
+        public async Task<IEnumerable<Address>> GetCityAssync(string city)
+           => await Task.FromResult(_addres.Where(x => x.City == city.ToLower()));
 
         public async Task<IEnumerable<Address>> GetAllAssync()
            => await Task.FromResult(_addres.ToList());

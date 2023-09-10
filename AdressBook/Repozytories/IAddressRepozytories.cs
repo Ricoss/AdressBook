@@ -9,7 +9,7 @@ namespace AdressBook.Repozytories
     {
         Task AddAssync(Address address);
         Task<Address> GetAssync(Guid id);
-        Task<Address> GetCityAssync(string city);
+        Task<IEnumerable<Address>> GetCityAssync(string city);
         Task<IEnumerable<Address>> GetAllAssync();
         Task UpdataAssync (Address adress);
         Task DeleteAssync(Guid id);

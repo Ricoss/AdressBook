@@ -28,7 +28,7 @@ namespace AdressBook.Controllers
             await _adressService.AddAdresAsync(addressBook.Name, addressBook.Street, addressBook.BuldingNumber, addressBook.PremisesNumber, addressBook.PostCode, addressBook.City, addressBook.Country);
         }
         [HttpGet("{city}")]
-        public async Task<Address> Get(string city)
+        public async Task<IEnumerable<Address>> Get(string city)
         => await _adressService.GetCityAsync(city);
         [Route("GetLastAddedAdres")]
         [HttpGet]
@@ -36,10 +36,10 @@ namespace AdressBook.Controllers
         {
 
         }
+
         [Route("GetAllAddress")]
         [HttpGet]
         public async Task<IEnumerable<Address>> GetAll()
         => await _adressService.GetAllAssync();
-
     }
 }

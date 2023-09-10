@@ -17,7 +17,7 @@ namespace AdressBook.Services
         public async Task AddAddressAsync()
         {   
             var tasks = new List<Task>();
-            for (var i = 1; i <= 4; i++)
+            for (var i = 1; i <= 2; i++)
             {
             tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret{i}", i, "19-200", "Bełda", "Polend"));
             tasks.Add(_addressService.AddAdresAsync($"Name{i}", $"Stret{i}", i, "76-211", "Bałamątek", "Polend"));
