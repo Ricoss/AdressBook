@@ -1,3 +1,5 @@
+using AdressBook.Repozytories;
+using AdressBook.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,13 +18,12 @@ namespace AdressBook
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+        
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -32,6 +33,10 @@ namespace AdressBook
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdressBook", Version = "v1" });
             });
+            services.AddScoped<IAddressRepozytories, InMemoryAddress>();
+            services.AddScoped<IAddressService, AddressService>();
+            services.AddScoped<IDateInitializer, DateInitializer>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
