@@ -18,24 +18,21 @@ namespace AdressBook.Controllers
         }
         [HttpPost]
         public async Task Post([FromBody] HomeAddress addressBook)
-        {
-            await _adressService.AddAdresAsync(addressBook.Name, addressBook.Street, addressBook.BuldingNumber, addressBook.PostCode, addressBook.City, addressBook.Country);
-        }
+        => await _adressService.AddAdresAsync(addressBook.Name, addressBook.Street, addressBook.BuldingNumber, addressBook.PostCode, addressBook.City, addressBook.Country);
+
         [Route("BlockAddress")]
         [HttpPost]
         public async Task Post([FromBody] BlockAddress addressBook)
-        {
-            await _adressService.AddAdresAsync(addressBook.Name, addressBook.Street, addressBook.BuldingNumber, addressBook.PremisesNumber, addressBook.PostCode, addressBook.City, addressBook.Country);
-        }
+        => await _adressService.AddAdresAsync(addressBook.Name, addressBook.Street, addressBook.BuldingNumber, addressBook.PremisesNumber, addressBook.PostCode, addressBook.City, addressBook.Country);
+
         [HttpGet("{city}")]
         public async Task<IEnumerable<Address>> Get(string city)
         => await _adressService.GetCityAsync(city);
+
         [Route("GetLastAddedAdres")]
         [HttpGet]
-        public async Task Get()
-        {
-
-        }
+        public async Task<Address> Get()
+        => await _adressService.GetLastAddedAdresAsync();
 
         [Route("GetAllAddress")]
         [HttpGet]

@@ -1,6 +1,8 @@
 ﻿using AdressBook.Models;
 using AdressBook.Repozytories;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AdressBook.Services
@@ -26,17 +28,13 @@ namespace AdressBook.Services
         }
 
         public async Task<IEnumerable<Address>> GetCityAsync(string city)
-            =>await _addressRepozytories.GetCityAssync(city);
+        => await _addressRepozytories.GetCityAssync(city);
 
-        public async Task GetLastAddedAdresAsync()
-        {
-            var adres = _addressRepozytories.GetAllAssync();
-            //TODO 
-
-        }
+        public async Task<Address> GetLastAddedAdresAsync()
+        => await Task.FromResult(_addressRepozytories.GetAllAssync().Result.ToList().Last());
 
         public async Task<IEnumerable<Address>> GetAllAssync()
-            => await _addressRepozytories.GetAllAssync();
+        => await _addressRepozytories.GetAllAssync();
 
     }
 }

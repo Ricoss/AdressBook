@@ -8,7 +8,7 @@ namespace AdressBook.Services
     {
         public Task AddAdresAsync(string name, string street, int buldingNumber, string postCode, string city, string country);
         public Task AddAdresAsync(string name, string street, int buldingNumber, int premisesNumber, string postCode, string city, string country);
-        public Task GetLastAddedAdresAsync();
+        public Task<Address> GetLastAddedAdresAsync();
         public Task<IEnumerable<Address>> GetAllAssync();
         public Task<IEnumerable<Address>> GetCityAsync(string city);
     }

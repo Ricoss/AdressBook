@@ -18,17 +18,6 @@ namespace AddressBook.Tests
             _address = new Address("name", "street", 0, "00-000", "city", "country");
         }
 
-        //private Mock<IAddressRepozytories> _mockIAddressRepozytories = new Mock<IAddressRepozytories>();
-        // [Test]
-        // public async Task Test1()
-        // {
-        //     var addressService = new AddressService(_mockIAddressRepozytories.Object);
-        //
-        //     await addressService.AddAdresAsync("name", "street", 0, "00-000", "city", "country");
-        //
-        //     Assert.Pass(); 
-        // }
-
         [Test]
         public void TestingFirstConstructorInAddress()
         {
